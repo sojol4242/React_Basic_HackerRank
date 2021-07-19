@@ -4,15 +4,7 @@ function Slides({ slides }) {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
-  const reStart = () => {
-    setCurrent(0);
-  };
+ 
 
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
@@ -24,14 +16,26 @@ function Slides({ slides }) {
         <button
           data-testid="button-restart"
           className="small outlined"
-          onClick={reStart}
+          onClick={()=>{setCurrent(0)}}
         >
           Restart
         </button>
-        <button data-testid="button-prev" className="small" onClick={prevSlide}>
+        <button
+          data-testid="button-prev"
+          className="small"
+          onClick={() => {
+            setCurrent(current ===  0? length - 1: current -1 );
+          }}
+        >
           Prev
         </button>
-        <button data-testid="button-next" className="small" onClick={nextSlide}>
+        <button
+          data-testid="button-next"
+          className="small"
+          onClick={() => {
+            setCurrent(current === length - 1 ? 0 : current + 1);
+          }}
+        >
           Next
         </button>
       </div>
