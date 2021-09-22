@@ -1,5 +1,5 @@
-# Challenge Link: https://www.hackerrank.com/skills-verification/react_basic
-# React: Slideshow App
+### Challenge Link: `https://www.hackerrank.com/skills-verification/react_basic`
+## React: Slideshow App
 
 ## Environment 
 
